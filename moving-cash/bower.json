@@ -1,0 +1,24 @@
+{
+  "name": "movingCash",
+  "homepage": "https://github.com/erikschmoll/movingCash",
+  "authors": [
+    "Edward Erik Schmoll <erikschmoll@gmail.com>"
+  ],
+  "description": "this is a new app for test",
+  "main": "",
+  "moduleType": [
+    "amd",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}
