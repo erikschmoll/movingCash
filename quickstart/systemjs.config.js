@@ -7,7 +7,7 @@
   // map tells the System loader where to look for things
   var map = {
     'app':                        'app', // 'dist',
-
+    '@angular2-material': 'node_modules/@angular2-material',
     '@angular':                   'node_modules/@angular',
     'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
     'rxjs':                       'node_modules/rxjs'
@@ -19,6 +19,18 @@
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
   };
+
+    // put the names of any of your Material components here
+  const materialPkgs = [
+    'core',
+    'button',
+    'card',
+    'toolbar'
+  ];
+
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
 
   var ngPackageNames = [
     'common',
