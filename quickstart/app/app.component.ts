@@ -12,10 +12,10 @@ template: `
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" routerLink="/dashboard">Dashboard</a>
-        <a class="mdl-navigation__link" routerLink="/heroes">Heroes</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" routerLink="/dashboard">New Request</a>
+        <a class="mdl-navigation__link" routerLink="/heroes">Acaunt</a>
+        <a class="mdl-navigation__link" href="">All Request</a>
+        <a class="mdl-navigation__link" href=""><i class="material-icons">person</i>&nbsp;{{user}}</a>
       </nav>
     </div>
   </header>
@@ -31,4 +31,5 @@ template: `
 })
 export class AppComponent {
   title = 'Moving Cash';
+  user = 'Guest';
 }
