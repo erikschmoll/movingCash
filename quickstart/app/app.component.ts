@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
-template: `
+  templateUrl: '../templates/layout.html'
+/*template: `
    <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
@@ -27,7 +28,7 @@ template: `
 </div>
 
    
- `
+ `*/
 })
 export class AppComponent {
   title = 'Moving Cash';

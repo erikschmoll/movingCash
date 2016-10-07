@@ -6,6 +6,11 @@ import { HeroDetailComponent } from './hero-detail.component';
 import { HeroesComponent } from './heroes.component';
 import { routing }        from './app.routing';
 import { DashboardComponent }      from './dashboard.component';
+import { HomeComponent } from './component/home/home.component';
+import { SolicitudeComponent } from './component/solicitude/solicitude.component';
+import { AccountComponent } from './component/account/account.component';
+
+
 
 
 //import { MdCardModule } from '@angular2-material/card';
@@ -23,7 +28,10 @@ import { DashboardComponent }      from './dashboard.component';
     AppComponent,
     HeroesComponent,
     DashboardComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HomeComponent,
+    SolicitudeComponent,
+    AccountComponent
   ],
   bootstrap: [ AppComponent ]
 })
