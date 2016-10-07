@@ -1,0 +1,17 @@
+{
+  "name": "movingCash",
+  "description": "app with angular2 for t",
+  "main": "",
+  "authors": [
+    "erikschmoll"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/erikschmoll/movingCash",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

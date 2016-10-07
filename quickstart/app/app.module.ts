@@ -8,16 +8,16 @@ import { routing }        from './app.routing';
 import { DashboardComponent }      from './dashboard.component';
 
 
-import { MdCardModule } from '@angular2-material/card';
-import { MdButtonModule } from '@angular2-material/button';
+//import { MdCardModule } from '@angular2-material/card';
+//import { MdButtonModule } from '@angular2-material/button';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    routing,
+    routing/*,
     MdCardModule,
-    MdButtonModule
+    MdButtonModule*/
   ],
   declarations: [
     AppComponent,
