@@ -1,4 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
+import { Solicitude } from "../../model/solicitude.model";
+import { SolicitudeService } from "../../service/solicitude/solicitude.service";
+
 
 
 declare var $:any;
@@ -6,23 +9,35 @@ declare var $:any;
 
 @Component({
     selector: 'solicitude',
-    templateUrl: 'app/component/solicitude/solicitude-list.html'
+    templateUrl: 'app/component/solicitude/solicitude-list.html',
+    providers: [SolicitudeService]
 })
 export class SolicitudeComponent{
     title :string;
     solicitudes :[any];
-    constructor(){
+    solicitudesAll :Solicitude[];
+    constructor(private service: SolicitudeService){
         this.title = "Solicitudes"
-        this.solicitudes = [{name: "doli B"}]
+        this.solicitudes = [{name: "description"}]
         
     }
 
     ngAfterViewInit() {
        $('#solicitude_dt').DataTable({
-           data: this.solicitudes,
+           ajax: this.solicitudesAll,
            columns: [
-            { "data": "name", "title": "Pepe" }
+            { "data": "description", "title": "Description" }
         ]});
     }
+    
+    getSolicitudes = () =>{
+        this.service.getSolicitudes().then(res =>{
+            this.solicitudesAll = res;
+            $('#solicitude_dt').dataTable()._fnAjaxUpdate();
+        });
+    }
 
+    ngOnInit(): void {
+        this.getSolicitudes();
+    }
 }

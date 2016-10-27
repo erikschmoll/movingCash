@@ -1,7 +1,8 @@
 
 
-export class message{
+export class Message{
     id: number;
+    solicitudeId: number;
     comment: string;
     created: Date;
     updated: Date;

@@ -1,7 +1,7 @@
-import { message } from "./message.model"
+import { Message } from "./message.model"
 
 
-export class solicitude{
+export class Solicitude{
     id: number;
     description: string;
     amount: number;
@@ -11,6 +11,6 @@ export class solicitude{
     updated: Date;
     updatedby: number;
     createdby: number;
-    history: message[];
+    history: Message[];
     constructor(){}
 }
