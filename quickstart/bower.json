@@ -16,8 +16,6 @@
   ],
   "dependencies": {
     "materialize": "^0.97.7",
-    "datatables.net": "^1.10.12",
-    "datatables.net-bs": "^1.10.12",
-    "datatables.net-dt": "^1.10.12"
+    "handsontable": "^0.28.4"
   }
 }

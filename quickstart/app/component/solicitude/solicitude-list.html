@@ -1,3 +1,13 @@
 <h3> {{title}} </h3>
 
-<table id="solicitude_dt" class="display" width="100%"></table>
+
+<hot-table 
+           [data]="data"
+           (after-change)="afterChange($event)"
+           (after-on-cell-mouse-down)="afterOnCellMouseDown($event)"
+           [colHeaders]="colHeaders"
+           [columns]="columns"
+           [options]="options"
+           [colWidths]="colWidths"
+>
+</hot-table>
