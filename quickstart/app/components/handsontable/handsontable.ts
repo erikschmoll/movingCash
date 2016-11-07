@@ -46,12 +46,12 @@ export class HotTable implements OnInit, OnDestroy{
     });
   }
 
-  parseAutoComplete(column, dataSet) {
+  parseAutoComplete(column:any, dataSet:any) {
     let inst = this.inst;
 
     if (typeof column.source === 'string') {
       let relatedField:string = column.source;
-      column.source = function (query, process) {
+      column.source = function (query:any, process:any) {
         let row:number = inst.getSelected()[0];
         let data:any = dataSet[row];
 
@@ -65,7 +65,7 @@ export class HotTable implements OnInit, OnDestroy{
           o = o[fieldParts[i]];
         }
 
-        process(o.map(item => {
+        process(o.map((item:any) => {
           return !column.optionField ? item : item[column.optionField];
         }));
       };
@@ -82,7 +82,7 @@ export class HotTable implements OnInit, OnDestroy{
     };
 
     eventNames.forEach(eventName => {
-      htOptions[eventName] = data => {
+      htOptions[eventName] = (data:any) => {
         this[eventName].next(data);
       };
     });

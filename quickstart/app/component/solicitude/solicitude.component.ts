@@ -31,45 +31,47 @@ export class SolicitudeComponent {
             isActive: true
         }
     ];
-    public colHeaders: Array<string> = ['ID', 'First Name', 'Last Name', 'Address',
-        'Favorite food', 'Price', 'Is active'];
+    public colHeaders: Array<string> = ['Description', 'Amount', 'Rate',
+        'Created', 'Updated', 'Created By', 'Updated By'];
      columns: Array<any> = [
         {
-            data: 'id'
-        },
-        {
-            data: 'name.first',
+            data: 'description',
             renderer: 'text',
             readOnly: true
         },
         {
-            data: 'name.last',
+            data: 'amount',
+            type: 'numeric',
+            format: '$ 0,0.00',
             readOnly: true
         },
         {
-            data: 'address'
-        },
-        {
-            data: 'product.description',
-            source: 'product.options',
-            optionField: 'description',
-            type: 'autocomplete',
-            strict: false,
-            visibleRows: 4
-        },
-        {
-            data: 'price',
+            data: 'rate',
             type: 'numeric',
-            format: '$ 0,0.00'
+            //format: '0.00 %'
         },
         {
-            data: 'isActive',
-            type: 'checkbox',
-            checkedTemplate: true,
-            uncheckedTemplate: false
+            data: 'created',
+            renderer: 'text',
+            readOnly: true
+        },
+        {
+            data: 'updated',
+            renderer: 'text',
+            readOnly: true
+        },
+        {
+            data: 'createdby',
+            renderer: 'text',
+            readOnly: true
+        },
+        {
+            data: 'updatedby',
+            renderer: 'text',
+            readOnly: true
         }
     ];
-     colWidths: Array<number> = [null, null, null, null, null, null, 30];
+     colWidths: Array<number> = [null, null, null, null, null, null, null, 30];
      options: any = {
         stretchH: 'all',
         columnSorting: true,
@@ -83,7 +85,7 @@ export class SolicitudeComponent {
     constructor(private service: SolicitudeService) {
         this.title = "Solicitudes"
         this.solicitudes = [{ name: "description" }]
-
+        this.solicitudesAll = []
     }
 
     private afterChange(e: any) {
