@@ -16,21 +16,6 @@ declare var $: any;
     directives: [handsontable, NgClass, CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class SolicitudeComponent {
- data: Array<any> = [
-        {
-            id: 1,
-            name: {
-                first: "Erik",
-                last: "Schmoll"
-            },
-            address: "Rivadavia 2040",
-            product: {
-                description: "product"
-            },
-            price: 40,
-            isActive: true
-        }
-    ];
     public colHeaders: Array<string> = ['Description', 'Amount', 'Rate',
         'Created', 'Updated', 'Created By', 'Updated By'];
      columns: Array<any> = [
@@ -52,8 +37,11 @@ export class SolicitudeComponent {
         },
         {
             data: 'created',
-            renderer: 'text',
-            readOnly: true
+            readOnly: false,
+            type: 'date',
+            dateFormat: 'DD/MM/YYYY',
+            correctFormat: true,
+            defaultDate: '01/01/1900'
         },
         {
             data: 'updated',
@@ -71,7 +59,7 @@ export class SolicitudeComponent {
             readOnly: true
         }
     ];
-     colWidths: Array<number> = [null, null, null, null, null, null, null, 30];
+     colWidths: Array<number> = [30, 30, 30, 30, 30, 30, 30, 30];
      options: any = {
         stretchH: 'all',
         columnSorting: true,

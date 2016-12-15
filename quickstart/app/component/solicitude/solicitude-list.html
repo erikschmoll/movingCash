@@ -1,13 +1,21 @@
-<h3> {{title}} </h3>
 
 
-<hot-table 
+
+
+ <div class="row">
+      <div class="col s12"><h5> {{title}} </h5></div>
+      <div class="col s6">
+          <hot-table 
            [data]="solicitudesAll"
            (afterChange)="afterChange($event)"
            (afterOnCellMouseDown)="afterOnCellMouseDown($event)"
            [colHeaders]="colHeaders"
            [columns]="columns"
            [options]="options"
-           [colWidths]="colWidths"
->
-</hot-table>
+           [colWidths]="colWidths">
+    </hot-table>    
+          </div>
+      <div class="col s6">
+          
+          </div>
+    </div>
