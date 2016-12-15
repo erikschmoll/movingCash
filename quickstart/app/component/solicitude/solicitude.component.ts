@@ -89,11 +89,11 @@ export class SolicitudeComponent {
     }
 
     private afterChange(e: any) {
-        console.log(e);
+        //console.log(e);
     }
 
     private afterOnCellMouseDown(e: any) {
-        console.log(e);
+       // console.log(e);
     }
 
     ngAfterViewInit() {
@@ -102,7 +102,10 @@ export class SolicitudeComponent {
 
     getSolicitudes = () => {
         this.service.getSolicitudes().then(res => {
-            this.solicitudesAll = res;
+            var me = this;
+            res.forEach(item => {
+                me.solicitudesAll.push(item)
+            });
         });
     }
 
