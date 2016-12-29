@@ -8,9 +8,10 @@
   },
   "author": "",
   "license": "ISC",
-	 "dependencies": {
-	 "express": "^4.7.1",
-	 "method-override": "^2.1.2",
-	 "body-parser": "^1.5.1"
-	 }
+  "dependencies": {
+    "body-parser": "^1.5.1",
+    "express": "^4.7.1",
+    "method-override": "^2.1.2",
+    "mongoose": "^4.7.5"
+  }
 }

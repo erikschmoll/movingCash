@@ -1,8 +1,12 @@
 var express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override')
+    mongoose = require('mongoose')
+    SolicitudeService = require('./service/solicitude.service.js');
 
+    var a = new SolicitudeService()
+    a.ini(mongoose);
 
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json());
@@ -16,6 +20,11 @@ var express = require('express'),
 
     app.use(router);
 
-    app.listen(3000, ()=>{
-        console.log("Node serve running on http://localhost:3000");
-    }); 
+    mongoose.connect('mongodb://localhost/Solicitude',(err, res) =>{
+        if(err) {
+            console.log('ERROR: connecting to Database. ' + err);
+        }
+        app.listen(3000, ()=>{
+            console.log("Node serve running on http://localhost:3000");
+        }); 
+    })
