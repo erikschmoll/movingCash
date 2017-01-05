@@ -1,21 +1,19 @@
 
+var mongoose = require('mongoose')
+var SoliScheme = require('../models/solicitude.model.js');
 
 function SolicitudeService() {
 
-    this.ini = (mongoose) =>{
-        var Schema = mongoose.Schema,
-        SolicitudeScheme = new Schema({
-            name: { type: String },
-            email: { type: String },
-            genre: { type: String, enum: ['male', 'female'] }
-        });
-        module.exports = mongoose.model('Solicitude', SolicitudeScheme);
+    this.ini = () =>{
+        var Schema = mongoose.Schema
+        module.exports = mongoose.model('solicitude', SoliScheme);
     }
-    this.findAll = () =>{
-        var mongoose = require('mongoose'),
-        solicitudedb = mongoose.model('Solicitude');
-       // solicitudedb.findAll()
-        return SOLI;
+    this.findAll = (req, res) =>{
+        var MyModel = mongoose.model('solicitude');
+       // var model = new MyModel();
+        return MyModel.find({},(err, docs)=>{
+            res.send(docs);
+        });
     }
 
 }
