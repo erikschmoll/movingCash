@@ -27,8 +27,8 @@ var express = require('express'),
         if(err) {
             console.log('ERROR: connecting to Database. ' + err);
         }
-        app.listen(3000, ()=>{
-            console.log("Node serve running on http://localhost:3000");
+        app.listen(8080, ()=>{
+            console.log("Node serve running on http://localhost:8080");
         }); 
     })
 
