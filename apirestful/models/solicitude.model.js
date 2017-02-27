@@ -2,7 +2,7 @@ var Schema = require('mongoose').Schema
 
 
 var solicitudeSchema = new Schema({
-    id:             "Number",
+    _id:             "ObjectId",
     interestRate:   "Number",
     amount:         "Number",
     wayToPay:       "Number",

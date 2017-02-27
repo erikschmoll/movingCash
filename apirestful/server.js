@@ -4,6 +4,7 @@ var express = require('express'),
     methodOverride = require('method-override')
     mongoose = require('mongoose')
     SolicitudeService = require('./service/solicitude.service.js');
+var SoliScheme = require('./models/solicitude.model.js');
 
     var _SolicitudeService = new SolicitudeService()
     _SolicitudeService.ini(mongoose);
@@ -30,32 +31,27 @@ var express = require('express'),
         app.listen(8080, ()=>{
             console.log("Node serve running on http://localhost:8080");
         }); 
+
+
+        /*var Schema = mongoose.Schema
+        var solicitudeSchema1 = SoliScheme
+
+        var Todo = mongoose.model('solicitude', solicitudeSchema1);
+        // Create a todo in memory
+        var todo = new Todo({_id: "59b4477fe388e8151c74cc03",amount: 1000, interestRate: 2, description: 'Getting there...'});
+        todo.save(function(err){
+        if(err)
+            console.log(err);
+        else
+            console.log(todo);
+        });*/
+
     })
 
 
 
-/*
-    var Schema = mongoose.Schema
-    var solicitudeSchema = new Schema({
-    id:             "Number",
-    interestRate:   "Number",
-    amount:         "Number",
-    wayToPay:       "Number",
-    description:    "String",
-    created:        "Date",
-    updated:        "Date",
-    createby:       "Number"
-})
 
-    var Todo = mongoose.model('solicitude', solicitudeSchema);
-    // Create a todo in memory
-    var todo = new Todo({amount: 1000, interestRate: 2, description: 'Getting there...'});
-    todo.save(function(err){
-    if(err)
-        console.log(err);
-    else
-        console.log(todo);
-    });*/
+
 
 
 
