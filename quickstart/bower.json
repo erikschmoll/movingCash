@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "materialize": "^0.97.7",
-    "handsontable": "^0.28.4"
+    "handsontable": "^0.31.0"
   }
 }

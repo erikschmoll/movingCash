@@ -88,29 +88,11 @@ export class SolicitudeComponent {
         
     }
 
-    getSolicitudes = () => {
-        this.service.getSolicitudes().then(res => {
-            var me = this;
-            res.forEach(item => {
-                me.solicitudesAll.push(item)
-            });
-        });
-    }
-    getSolicitudes2 = () => {
-        this.service.getSolicitudes().then(res => {
-            var me = this;
-            res.forEach(item => {
-                me.solicitudesAll.push(item)
-            });
-        });
-    }
-
     ngOnInit(): void {
-        //this.getSolicitudes();
-        this.service.getSolicitudes2()
+       this.service.getSolicitudes()
       .subscribe(res => {
             var me = this;
-            me.solicitudesAll = res.json();
+            res.json().forEach(element => { me.solicitudesAll.push(element) });
         });
     }
 }

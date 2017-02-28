@@ -12,14 +12,8 @@ import { Observable }     from 'rxjs/Observable';
 @Injectable()
 export class SolicitudeService{
     constructor(private http: Http){}
-    getSolicitudes = ():Promise<Solicitude[]> => {
-        return Promise.resolve(SOLICITUDES);
-    }
 
-    getSolicitudes2 = (): Observable<Response> => {
-        var he = new Headers();
-       
-       // Headers.append('Access-Control-Allow-Origin', '*');
+    getSolicitudes = (): Observable<Response> => {
         return this.http.get('http://localhost:8080/solicitudes');
     }
 }
