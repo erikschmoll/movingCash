@@ -96,8 +96,21 @@ export class SolicitudeComponent {
             });
         });
     }
+    getSolicitudes2 = () => {
+        this.service.getSolicitudes().then(res => {
+            var me = this;
+            res.forEach(item => {
+                me.solicitudesAll.push(item)
+            });
+        });
+    }
 
     ngOnInit(): void {
-        this.getSolicitudes();
+        //this.getSolicitudes();
+        this.service.getSolicitudes2()
+      .subscribe(res => {
+            var me = this;
+            me.solicitudesAll = res.json();
+        });
     }
 }
